@@ -34,11 +34,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   supabase: {
-    redirectOptions: {
-      login: '/auth/login',
-      callback: '/auth/callback',
-      exclude: ['/', '/creators', '/creators/*'],
-    },
+    redirect: false,
   },
 
   i18n: {
