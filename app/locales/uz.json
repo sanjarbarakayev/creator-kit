@@ -7,39 +7,78 @@
     "signOut": "Chiqish",
     "instagram": "Instagram",
     "tiktok": "TikTok",
-    "mediaKit": "Media-kit"
+    "mediaKit": "Media-kit",
+    "home": "Bosh sahifa",
+    "privacy": "Maxfiylik",
+    "terms": "Foydalanish shartlari"
   },
   "landing": {
-    "title": "CreatorKit — O'zbek kreatorlar uchun platforma",
+    "title": "Kreatorlar uchun yagona platforma",
+    "titleHighlight": "CreatorKit",
     "subtitle": "Instagram va TikTok statistikangizni kuzating, professional media-kit yarating va brendlar bilan bog'laning — barchasi bir joyda",
-    "cta": "Boshlash",
-    "browse": "Ko'rish",
+    "cta": "Bepul boshlash",
+    "browse": "Kreatorlarni ko'rish",
     "featuresTitle": "Nimalar qila olasiz?",
     "featuresSubtitle": "Kreator sifatida o'sishingiz uchun barcha kerakli vositalar",
     "features": {
       "analytics": "Analitika",
-      "analyticsDesc": "Instagram va TikTok statistikangizni bir joyda ko'ring",
+      "analyticsDesc": "Instagram va TikTok statistikangizni bir joyda ko'ring va o'sishingizni real vaqtda kuzating",
       "mediaKit": "Media Kit",
-      "mediaKitDesc": "Professional media-kit yarating va ulashing",
+      "mediaKitDesc": "Professional media-kit yarating va brendlarga ulashing — bir necha daqiqada tayyor",
       "directory": "Katalog",
-      "directoryDesc": "Brendlar sizni topsin — kreatorlar katalogida ko'rining",
+      "directoryDesc": "Brendlar sizni topsin — kreatorlar katalogida ko'rining va hamkorlik imkoniyatlarini oling",
       "telegram": "Telegram Bot",
-      "telegramDesc": "Kunlik statistikani Telegram orqali oling"
+      "telegramDesc": "Kunlik statistikani Telegram orqali oling — hech qanday ilovani ochmay"
     },
     "howTitle": "Qanday ishlaydi?",
     "steps": {
       "step1": "Ro'yxatdan o'ting",
+      "step1Desc": "Email yoki Google orqali 30 soniyada",
       "step2": "Instagram/TikTok ulang",
-      "step3": "Media Kit yarating va ulashing"
+      "step2Desc": "Bir klik bilan hisobingizni ulang",
+      "step3": "Media Kit yarating va ulashing",
+      "step3Desc": "Professional profilingizni brendlarga yuboring"
     },
-    "stats": {
-      "creators": "Kreatorlar",
-      "followers": "Kuzatilgan obunachilar",
-      "mediaKits": "Media kitlar"
-    },
+    "statsHeadline": "Kreatorlar uchun #1 platforma",
     "ctaTitle": "Tayyor boshlashga?",
     "ctaSubtitle": "Bepul ro'yxatdan o'ting va kreator profilingizni yarating",
-    "ctaButton": "Hoziroq boshlash"
+    "ctaButton": "Bepul profil yaratish",
+    "midCta1": "Bepul profil yaratish",
+    "midCta1Sub": "30 soniyada ro'yxatdan o'ting",
+    "midCta2": "Hoziroq boshlang",
+    "midCta2Sub": "Media-kitingizni yarating",
+    "testimonials": {
+      "title": "Kreatorlar nima deydi?",
+      "t1": {
+        "name": "Nodira Karimova",
+        "role": "Beauty blogger, 125K followers",
+        "quote": "CreatorKit menga brendlar bilan professional tarzda bog'lanishga yordam berdi. Media-kit funksiyasi juda qulay!"
+      },
+      "t2": {
+        "name": "Sardor Alimov",
+        "role": "Tech blogger, 89K followers",
+        "quote": "Analitika paneli orqali o'sishimni kuzatyapman. Endi qaysi kontent yaxshi ishlashini aniq bilaman."
+      },
+      "t3": {
+        "name": "Malika Usmanova",
+        "role": "Food blogger, 210K followers",
+        "quote": "Brendlar meni CreatorKit katalogi orqali topishmoqda. Oylik daromadim 3 barobar oshdi!"
+      }
+    },
+    "dashboardMockup": {
+      "followers": "Obunachilar",
+      "growth": "O'sish",
+      "engagement": "Faollik",
+      "topContent": "Top kontent",
+      "analytics": "Analitika"
+    }
+  },
+  "footer": {
+    "description": "O'zbek kreatorlar uchun analitika, media-kit va katalog platformasi",
+    "copyright": "© 2026 CreatorKit. Barcha huquqlar himoyalangan.",
+    "navigation": "Navigatsiya",
+    "legal": "Huquqiy",
+    "social": "Ijtimoiy tarmoqlar"
   },
   "auth": {
     "loginSubtitle": "Hisobingizga kiring",
@@ -51,7 +90,13 @@
     "or": "yoki",
     "googleSignIn": "Google orqali kirish",
     "noAccount": "Hisobingiz yo'qmi?",
-    "signUp": "Ro'yxatdan o'tish"
+    "signUp": "Ro'yxatdan o'tish",
+    "forgotPassword": "Parolni unutdingizmi?",
+    "showPassword": "Parolni ko'rsatish",
+    "hidePassword": "Parolni yashirish",
+    "invalidEmail": "Email manzil noto'g'ri",
+    "passwordRequired": "Parol kiritish shart",
+    "passwordMinLength": "Parol kamida 6 belgidan iborat bo'lishi kerak"
   },
   "dashboard": {
     "title": "Boshqaruv paneli",

@@ -7,39 +7,78 @@
     "signOut": "Sign out",
     "instagram": "Instagram",
     "tiktok": "TikTok",
-    "mediaKit": "Media Kit"
+    "mediaKit": "Media Kit",
+    "home": "Home",
+    "privacy": "Privacy",
+    "terms": "Terms"
   },
   "landing": {
-    "title": "CreatorKit — Platform for Uzbek Creators",
+    "title": "The platform for creators",
+    "titleHighlight": "CreatorKit",
     "subtitle": "Track your Instagram and TikTok analytics, create professional media kits and connect with brands — all in one place",
-    "cta": "Get started",
-    "browse": "Browse",
+    "cta": "Get started free",
+    "browse": "Browse creators",
     "featuresTitle": "What can you do?",
     "featuresSubtitle": "All the tools you need to grow as a creator",
     "features": {
       "analytics": "Analytics",
-      "analyticsDesc": "View your Instagram and TikTok stats in one place",
+      "analyticsDesc": "View your Instagram and TikTok stats in one place and track your growth in real time",
       "mediaKit": "Media Kit",
-      "mediaKitDesc": "Create and share professional media kits",
+      "mediaKitDesc": "Create and share professional media kits with brands — ready in minutes",
       "directory": "Directory",
-      "directoryDesc": "Let brands find you — appear in the creator directory",
+      "directoryDesc": "Let brands find you — appear in the creator directory and get collaboration opportunities",
       "telegram": "Telegram Bot",
-      "telegramDesc": "Get daily stats delivered via Telegram"
+      "telegramDesc": "Get daily stats delivered via Telegram — without opening any app"
     },
     "howTitle": "How it works",
     "steps": {
       "step1": "Sign up",
+      "step1Desc": "30 seconds via email or Google",
       "step2": "Connect Instagram/TikTok",
-      "step3": "Create & share your Media Kit"
+      "step2Desc": "Link your account with one click",
+      "step3": "Create & share your Media Kit",
+      "step3Desc": "Send your professional profile to brands"
     },
-    "stats": {
-      "creators": "Creators",
-      "followers": "Followers tracked",
-      "mediaKits": "Media kits"
-    },
+    "statsHeadline": "#1 platform for creators",
     "ctaTitle": "Ready to get started?",
     "ctaSubtitle": "Sign up for free and create your creator profile",
-    "ctaButton": "Start now"
+    "ctaButton": "Create free profile",
+    "midCta1": "Create free profile",
+    "midCta1Sub": "Sign up in 30 seconds",
+    "midCta2": "Start now",
+    "midCta2Sub": "Create your media kit",
+    "testimonials": {
+      "title": "What creators say",
+      "t1": {
+        "name": "Nodira Karimova",
+        "role": "Beauty blogger, 125K followers",
+        "quote": "CreatorKit helped me connect with brands professionally. The media kit feature is super convenient!"
+      },
+      "t2": {
+        "name": "Sardor Alimov",
+        "role": "Tech blogger, 89K followers",
+        "quote": "I track my growth through the analytics dashboard. Now I know exactly which content performs best."
+      },
+      "t3": {
+        "name": "Malika Usmanova",
+        "role": "Food blogger, 210K followers",
+        "quote": "Brands are finding me through the CreatorKit directory. My monthly income tripled!"
+      }
+    },
+    "dashboardMockup": {
+      "followers": "Followers",
+      "growth": "Growth",
+      "engagement": "Engagement",
+      "topContent": "Top content",
+      "analytics": "Analytics"
+    }
+  },
+  "footer": {
+    "description": "Analytics, media kit and directory platform for Uzbek creators",
+    "copyright": "© 2026 CreatorKit. All rights reserved.",
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "social": "Social"
   },
   "auth": {
     "loginSubtitle": "Sign in to your account",
@@ -51,7 +90,13 @@
     "or": "or",
     "googleSignIn": "Sign in with Google",
     "noAccount": "Don't have an account?",
-    "signUp": "Sign up"
+    "signUp": "Sign up",
+    "forgotPassword": "Forgot password?",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "invalidEmail": "Invalid email address",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 6 characters"
   },
   "dashboard": {
     "title": "Dashboard",

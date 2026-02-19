@@ -5,18 +5,18 @@ const { t } = useI18n()
 
 const search = ref('')
 const selectedNiches = ref<string[]>([])
-const selectedPlatform = ref('')
-const selectedLanguage = ref('')
+const selectedPlatform = ref('all')
+const selectedLanguage = ref('all')
 const selectedCity = ref('')
 
 const allNiches = ['beauty', 'tech', 'food', 'travel', 'education', 'fashion', 'lifestyle', 'entertainment', 'sports', 'health']
 const platforms = [
-  { label: 'All', value: '' },
+  { label: 'All', value: 'all' },
   { label: 'Instagram', value: 'instagram' },
   { label: 'TikTok', value: 'tiktok' },
 ]
 const languageOptions = [
-  { label: 'All', value: '' },
+  { label: 'All', value: 'all' },
   { label: "O'zbekcha", value: 'uz' },
   { label: 'Русский', value: 'ru' },
   { label: 'English', value: 'en' },
@@ -32,10 +32,10 @@ const mockCreators = [
 ]
 
 const filteredCreators = computed(() => {
-  return mockCreators.filter(c => {
+  return mockCreators.filter((c) => {
     if (search.value && !c.full_name.toLowerCase().includes(search.value.toLowerCase()) && !c.username.includes(search.value.toLowerCase())) return false
     if (selectedNiches.value.length && !selectedNiches.value.some(n => c.niches.includes(n))) return false
-    if (selectedPlatform.value && !c.platforms.includes(selectedPlatform.value)) return false
+    if (selectedPlatform.value && selectedPlatform.value !== 'all' && !c.platforms.includes(selectedPlatform.value)) return false
     if (selectedCity.value && c.city.toLowerCase() !== selectedCity.value.toLowerCase()) return false
     return true
   })
@@ -52,6 +52,15 @@ function formatFollowers(n: number) {
   if (n >= 1000) return (n / 1000).toFixed(0) + 'K'
   return n.toString()
 }
+
+const avatarGradients = [
+  'from-pink-500 to-rose-500',
+  'from-blue-500 to-indigo-500',
+  'from-amber-500 to-orange-500',
+  'from-emerald-500 to-teal-500',
+  'from-purple-500 to-violet-500',
+  'from-cyan-500 to-sky-500',
+]
 
 useHead({
   title: t('creators.title'),
@@ -103,13 +112,13 @@ useHead({
       <div class="flex-1">
         <div v-if="filteredCreators.length" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
           <NuxtLink
-            v-for="creator in filteredCreators"
+            v-for="(creator, i) in filteredCreators"
             :key="creator.username"
             :to="`/creators/${creator.username}`"
           >
-            <UCard class="hover:ring-2 hover:ring-primary transition-all h-full">
+            <UCard class="hover:ring-2 hover:ring-primary hover:shadow-lg transition-all duration-300 h-full hover:-translate-y-0.5">
               <div class="flex items-center gap-3 mb-3">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-lg font-bold text-primary">
+                <div :class="['w-12 h-12 rounded-full bg-gradient-to-br flex items-center justify-center text-sm font-bold text-white', avatarGradients[i % avatarGradients.length]]">
                   {{ creator.full_name.charAt(0) }}
                 </div>
                 <div>
@@ -139,6 +148,7 @@ useHead({
         </div>
 
         <div v-else class="text-center py-16 text-gray-500">
+          <UIcon name="i-lucide-search-x" class="mx-auto h-12 w-12 text-gray-300 mb-4" />
           <p class="text-lg">{{ t('creators.noResults') }}</p>
         </div>
       </div>
