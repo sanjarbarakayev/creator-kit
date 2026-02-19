@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'public',
+  auth: false,
 })
 
 const { t } = useI18n()

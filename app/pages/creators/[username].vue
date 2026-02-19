@@ -1,4 +1,6 @@
 <script setup lang="ts">
+definePageMeta({ auth: false })
+
 const { t } = useI18n()
 const route = useRoute()
 
