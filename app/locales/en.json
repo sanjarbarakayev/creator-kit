@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "creators": "Creators",
+    "settings": "Settings",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "mediaKit": "Media Kit"
+  },
+  "landing": {
+    "title": "CreatorKit — Platform for Uzbek Creators",
+    "subtitle": "Track your Instagram and TikTok analytics, create professional media kits and connect with brands — all in one place",
+    "cta": "Get started",
+    "browse": "Browse",
+    "featuresTitle": "What can you do?",
+    "featuresSubtitle": "All the tools you need to grow as a creator",
+    "features": {
+      "analytics": "Analytics",
+      "analyticsDesc": "View your Instagram and TikTok stats in one place",
+      "mediaKit": "Media Kit",
+      "mediaKitDesc": "Create and share professional media kits",
+      "directory": "Directory",
+      "directoryDesc": "Let brands find you — appear in the creator directory",
+      "telegram": "Telegram Bot",
+      "telegramDesc": "Get daily stats delivered via Telegram"
+    },
+    "howTitle": "How it works",
+    "steps": {
+      "step1": "Sign up",
+      "step2": "Connect Instagram/TikTok",
+      "step3": "Create & share your Media Kit"
+    },
+    "stats": {
+      "creators": "Creators",
+      "followers": "Followers tracked",
+      "mediaKits": "Media kits"
+    },
+    "ctaTitle": "Ready to get started?",
+    "ctaSubtitle": "Sign up for free and create your creator profile",
+    "ctaButton": "Start now"
+  },
+  "auth": {
+    "loginSubtitle": "Sign in to your account",
+    "email": "Email",
+    "emailPlaceholder": "email{'@'}example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign in",
+    "or": "or",
+    "googleSignIn": "Sign in with Google",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome, {name}",
+    "connectedAccounts": "Connected accounts",
+    "totalFollowers": "Total followers",
+    "mediaKit": "Media kit",
+    "mediaKitNotCreated": "Not yet created",
+    "followers": "Followers",
+    "engagement": "Engagement Rate",
+    "growth": "Weekly Growth",
+    "growthChart": "Follower Growth",
+    "engagementChart": "Engagement Rate",
+    "topPosts": "Top Posts",
+    "quickActions": "Quick Actions",
+    "connectInstagram": "Connect Instagram",
+    "createMediaKit": "Create Media Kit",
+    "syncAnalytics": "Sync Analytics",
+    "period7d": "7D",
+    "period30d": "30D",
+    "period90d": "90D"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "Tell us about yourself",
+      "subtitle": "Fill in your profile information"
+    },
+    "step2": {
+      "title": "Choose your niches",
+      "subtitle": "Select categories that match your content"
+    },
+    "step3": {
+      "title": "Connect your socials",
+      "subtitle": "Link your social media accounts"
+    },
+    "step4": {
+      "title": "Almost done!",
+      "subtitle": "Set your language preferences and contact info"
+    },
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Your full name",
+    "username": "Username",
+    "bio": "Bio",
+    "bioPlaceholder": "Tell us about yourself...",
+    "city": "City",
+    "cityPlaceholder": "Your city",
+    "country": "Country",
+    "connectInstagram": "Connect Instagram",
+    "connectTiktok": "Connect TikTok (coming soon)",
+    "skipSocials": "You can skip this step and connect later",
+    "contentLanguages": "Content languages",
+    "contactEmail": "Contact email",
+    "telegramUsername": "Telegram username",
+    "back": "Back",
+    "next": "Next",
+    "complete": "Complete setup",
+    "niches": {
+      "beauty": "Beauty",
+      "tech": "Tech",
+      "food": "Food",
+      "travel": "Travel",
+      "education": "Education",
+      "fashion": "Fashion",
+      "lifestyle": "Lifestyle",
+      "entertainment": "Entertainment",
+      "sports": "Sports",
+      "health": "Health"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "niches": "Niches",
+    "connectedAccounts": "Connected accounts",
+    "noAccounts": "No accounts connected",
+    "disconnect": "Disconnect",
+    "disconnected": "Account disconnected",
+    "save": "Save changes",
+    "saved": "Profile saved",
+    "error": "Something went wrong",
+    "dangerZone": "Danger zone",
+    "deleteWarning": "Once you delete your account, there is no going back. All your data will be permanently removed.",
+    "deleteAccount": "Delete account",
+    "confirmDelete": "Yes, delete my account",
+    "cancel": "Cancel"
+  },
+  "creators": {
+    "title": "Creator Directory",
+    "subtitle": "Discover talented creators and influencers",
+    "search": "Search",
+    "searchPlaceholder": "Search by name or username...",
+    "niche": "Niche",
+    "platform": "Platform",
+    "language": "Language",
+    "city": "City",
+    "cityPlaceholder": "Filter by city",
+    "followers": "followers",
+    "noResults": "No creators found matching your filters"
+  },
+  "mediakit": {
+    "title": "Media Kit",
+    "subtitle": "Create and customize your media kit",
+    "chooseTemplate": "Choose a template",
+    "templateMinimal": "Minimal",
+    "templateMinimalDesc": "Clean and simple design",
+    "templateProfessional": "Professional",
+    "templateProfessionalDesc": "Business-focused layout",
+    "templateCreative": "Creative",
+    "templateCreativeDesc": "Bold and colorful style",
+    "basicInfo": "Basic Information",
+    "tagline": "Tagline",
+    "taglinePlaceholder": "Your catchy tagline...",
+    "bio": "About",
+    "bioPlaceholder": "Tell brands about yourself...",
+    "portfolio": "Portfolio",
+    "addUrl": "Add URL",
+    "pricing": "Pricing",
+    "pricingStory": "Instagram Story",
+    "pricingPost": "Instagram Post",
+    "pricingReel": "Instagram Reel",
+    "pricingPackage": "Package Deal",
+    "includeAnalytics": "Include Analytics",
+    "includeAnalyticsDesc": "Show follower count, engagement rate and top posts",
+    "preview": "Live Preview",
+    "previewTagline": "Your Tagline Here",
+    "previewBio": "Your bio will appear here...",
+    "previewFollowers": "Followers",
+    "previewER": "Engagement Rate",
+    "previewAvgLikes": "Avg. Likes",
+    "previewAvgComments": "Avg. Comments",
+    "previewTopPosts": "Top Posts",
+    "save": "Save",
+    "saved": "Media kit saved",
+    "downloadPdf": "Download PDF",
+    "pdfGenerated": "PDF generated successfully",
+    "copyLink": "Copy Link",
+    "linkCopied": "Link copied to clipboard",
+    "error": "Something went wrong",
+    "notFound": "Media Kit Not Found",
+    "notFoundDesc": "This media kit doesn't exist or has been removed"
+  },
+  "creatorProfile": {
+    "platforms": "Connected platforms",
+    "noPlatforms": "No platforms connected yet",
+    "viewMediaKit": "View Media Kit"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "notConnected": "Your Instagram account is not connected",
+    "connectDescription": "Connect your Instagram account to track analytics",
+    "connect": "Connect Instagram"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "comingSoon": "Coming soon",
+    "comingSoonDescription": "We're working on TikTok integration. Soon you'll be able to view your TikTok analytics here."
+  },
+  "telegram": {
+    "bot": "Telegram bot",
+    "botDescription": "View your stats via Telegram bot",
+    "commands": {
+      "start": "Start the bot",
+      "stats": "View statistics",
+      "mediakit": "Get media kit link"
+    }
+  }
+}

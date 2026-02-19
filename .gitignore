@@ -1,35 +1,24 @@
-# Dependencies
-node_modules/
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
 
-# Build
-.output/
-.nuxt/
-dist/
+# Node dependencies
+node_modules
 
-# Environment
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
 .env
 .env.*
 !.env.example
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Claude Code
-.claude/
-
-# Supabase
-supabase/.temp/
-
-# Coverage
-coverage/
-
-# Logs
-*.log

@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "dashboard": "Boshqaruv paneli",
+    "creators": "Kreatorlar",
+    "settings": "Sozlamalar",
+    "signIn": "Kirish",
+    "signOut": "Chiqish",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "mediaKit": "Media-kit"
+  },
+  "landing": {
+    "title": "CreatorKit — O'zbek kreatorlar uchun platforma",
+    "subtitle": "Instagram va TikTok statistikangizni kuzating, professional media-kit yarating va brendlar bilan bog'laning — barchasi bir joyda",
+    "cta": "Boshlash",
+    "browse": "Ko'rish",
+    "featuresTitle": "Nimalar qila olasiz?",
+    "featuresSubtitle": "Kreator sifatida o'sishingiz uchun barcha kerakli vositalar",
+    "features": {
+      "analytics": "Analitika",
+      "analyticsDesc": "Instagram va TikTok statistikangizni bir joyda ko'ring",
+      "mediaKit": "Media Kit",
+      "mediaKitDesc": "Professional media-kit yarating va ulashing",
+      "directory": "Katalog",
+      "directoryDesc": "Brendlar sizni topsin — kreatorlar katalogida ko'rining",
+      "telegram": "Telegram Bot",
+      "telegramDesc": "Kunlik statistikani Telegram orqali oling"
+    },
+    "howTitle": "Qanday ishlaydi?",
+    "steps": {
+      "step1": "Ro'yxatdan o'ting",
+      "step2": "Instagram/TikTok ulang",
+      "step3": "Media Kit yarating va ulashing"
+    },
+    "stats": {
+      "creators": "Kreatorlar",
+      "followers": "Kuzatilgan obunachilar",
+      "mediaKits": "Media kitlar"
+    },
+    "ctaTitle": "Tayyor boshlashga?",
+    "ctaSubtitle": "Bepul ro'yxatdan o'ting va kreator profilingizni yarating",
+    "ctaButton": "Hoziroq boshlash"
+  },
+  "auth": {
+    "loginSubtitle": "Hisobingizga kiring",
+    "email": "Email",
+    "emailPlaceholder": "email{'@'}example.com",
+    "password": "Parol",
+    "passwordPlaceholder": "Parolingizni kiriting",
+    "signIn": "Kirish",
+    "or": "yoki",
+    "googleSignIn": "Google orqali kirish",
+    "noAccount": "Hisobingiz yo'qmi?",
+    "signUp": "Ro'yxatdan o'tish"
+  },
+  "dashboard": {
+    "title": "Boshqaruv paneli",
+    "welcome": "Xush kelibsiz, {name}",
+    "connectedAccounts": "Ulangan hisoblar",
+    "totalFollowers": "Jami obunachilar",
+    "mediaKit": "Media-kit",
+    "mediaKitNotCreated": "Hali yaratilmagan",
+    "followers": "Obunachilar",
+    "engagement": "Faollik darajasi",
+    "growth": "Haftalik o'sish",
+    "growthChart": "Obunachilar o'sishi",
+    "engagementChart": "Faollik darajasi",
+    "topPosts": "Top postlar",
+    "quickActions": "Tezkor amallar",
+    "connectInstagram": "Instagramni ulash",
+    "createMediaKit": "Media-kit yaratish",
+    "syncAnalytics": "Analitikani sinxronlash",
+    "period7d": "7K",
+    "period30d": "30K",
+    "period90d": "90K"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "O'zingiz haqingizda ayting",
+      "subtitle": "Profil ma'lumotlaringizni to'ldiring"
+    },
+    "step2": {
+      "title": "Yo'nalishlaringizni tanlang",
+      "subtitle": "Kontentingizga mos kategoriyalarni tanlang"
+    },
+    "step3": {
+      "title": "Ijtimoiy tarmoqlarni ulang",
+      "subtitle": "Ijtimoiy tarmoq hisoblaringizni ulang"
+    },
+    "step4": {
+      "title": "Deyarli tayyor!",
+      "subtitle": "Til va aloqa ma'lumotlarini sozlang"
+    },
+    "fullName": "To'liq ism",
+    "fullNamePlaceholder": "To'liq ismingiz",
+    "username": "Foydalanuvchi nomi",
+    "bio": "Bio",
+    "bioPlaceholder": "O'zingiz haqingizda yozing...",
+    "city": "Shahar",
+    "cityPlaceholder": "Shahringiz",
+    "country": "Davlat",
+    "connectInstagram": "Instagramni ulash",
+    "connectTiktok": "TikTokni ulash (tez kunda)",
+    "skipSocials": "Bu qadamni o'tkazib yuborishingiz mumkin",
+    "contentLanguages": "Kontent tillari",
+    "contactEmail": "Aloqa emaili",
+    "telegramUsername": "Telegram foydalanuvchi nomi",
+    "back": "Orqaga",
+    "next": "Keyingi",
+    "complete": "Sozlashni yakunlash",
+    "niches": {
+      "beauty": "Go'zallik",
+      "tech": "Texnologiya",
+      "food": "Ovqat",
+      "travel": "Sayohat",
+      "education": "Ta'lim",
+      "fashion": "Moda",
+      "lifestyle": "Turmush tarzi",
+      "entertainment": "Ko'ngilochar",
+      "sports": "Sport",
+      "health": "Salomatlik"
+    }
+  },
+  "settings": {
+    "title": "Sozlamalar",
+    "profile": "Profil",
+    "niches": "Yo'nalishlar",
+    "connectedAccounts": "Ulangan hisoblar",
+    "noAccounts": "Hech qanday hisob ulanmagan",
+    "disconnect": "Uzish",
+    "disconnected": "Hisob uzildi",
+    "save": "Saqlash",
+    "saved": "Profil saqlandi",
+    "error": "Xatolik yuz berdi",
+    "dangerZone": "Xavfli zona",
+    "deleteWarning": "Hisobingizni o'chirsangiz, qaytarib bo'lmaydi. Barcha ma'lumotlaringiz butunlay o'chiriladi.",
+    "deleteAccount": "Hisobni o'chirish",
+    "confirmDelete": "Ha, hisobimni o'chiring",
+    "cancel": "Bekor qilish"
+  },
+  "creators": {
+    "title": "Kreatorlar katalogi",
+    "subtitle": "Iqtidorli kreatorlar va inflyuenserlarni toping",
+    "search": "Qidirish",
+    "searchPlaceholder": "Ism yoki username bo'yicha qidirish...",
+    "niche": "Yo'nalish",
+    "platform": "Platforma",
+    "language": "Til",
+    "city": "Shahar",
+    "cityPlaceholder": "Shahar bo'yicha filtrlash",
+    "followers": "obunachilar",
+    "noResults": "Filtrlarga mos kreatorlar topilmadi"
+  },
+  "mediakit": {
+    "title": "Media-kit",
+    "subtitle": "Media-kitingizni yarating va sozlang",
+    "chooseTemplate": "Shablon tanlang",
+    "templateMinimal": "Minimal",
+    "templateMinimalDesc": "Oddiy va toza dizayn",
+    "templateProfessional": "Professional",
+    "templateProfessionalDesc": "Biznes uchun tartib",
+    "templateCreative": "Ijodiy",
+    "templateCreativeDesc": "Yorqin va rang-barang uslub",
+    "basicInfo": "Asosiy ma'lumotlar",
+    "tagline": "Slogan",
+    "taglinePlaceholder": "Esda qolarli sloganingiz...",
+    "bio": "Haqida",
+    "bioPlaceholder": "Brendlarga o'zingiz haqingizda ayting...",
+    "portfolio": "Portfolio",
+    "addUrl": "URL qo'shish",
+    "pricing": "Narxlar",
+    "pricingStory": "Instagram Story",
+    "pricingPost": "Instagram Post",
+    "pricingReel": "Instagram Reel",
+    "pricingPackage": "Paket taklif",
+    "includeAnalytics": "Analitikani ko'rsatish",
+    "includeAnalyticsDesc": "Obunachilar soni, ER va top postlarni ko'rsatish",
+    "preview": "Oldindan ko'rish",
+    "previewTagline": "Sloganingiz shu yerda",
+    "previewBio": "Tavsifingiz shu yerda ko'rinadi...",
+    "previewFollowers": "Obunachilar",
+    "previewER": "Faollik darajasi",
+    "previewAvgLikes": "O'rt. layklar",
+    "previewAvgComments": "O'rt. izohlar",
+    "previewTopPosts": "Top postlar",
+    "save": "Saqlash",
+    "saved": "Media-kit saqlandi",
+    "downloadPdf": "PDF yuklab olish",
+    "pdfGenerated": "PDF muvaffaqiyatli yaratildi",
+    "copyLink": "Havolani nusxalash",
+    "linkCopied": "Havola nusxalandi",
+    "error": "Xatolik yuz berdi",
+    "notFound": "Media-kit topilmadi",
+    "notFoundDesc": "Bu media-kit mavjud emas yoki o'chirilgan"
+  },
+  "creatorProfile": {
+    "platforms": "Ulangan platformalar",
+    "noPlatforms": "Hali platformalar ulanmagan",
+    "viewMediaKit": "Media-kitni ko'rish"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "notConnected": "Instagram hisobingiz ulanmagan",
+    "connectDescription": "Instagram hisobingizni ulang va analitikani kuzating",
+    "connect": "Instagramni ulash"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "comingSoon": "Tez kunda",
+    "comingSoonDescription": "TikTok integratsiyasi ustida ishlamoqdamiz. Tez orada bu yerda TikTok analitikangizni ko'rishingiz mumkin bo'ladi."
+  },
+  "telegram": {
+    "bot": "Telegram bot",
+    "botDescription": "Telegram bot orqali statistikangizni ko'ring",
+    "commands": {
+      "start": "Botni ishga tushirish",
+      "stats": "Statistikani ko'rish",
+      "mediakit": "Media-kit havolasini olish"
+    }
+  }
+}

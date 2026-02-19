@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "dashboard": "Панель управления",
+    "creators": "Креаторы",
+    "settings": "Настройки",
+    "signIn": "Войти",
+    "signOut": "Выйти",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "mediaKit": "Медиа-кит"
+  },
+  "landing": {
+    "title": "CreatorKit — Платформа для узбекских креаторов",
+    "subtitle": "Отслеживайте статистику Instagram и TikTok, создавайте профессиональные медиа-киты и связывайтесь с брендами — всё в одном месте",
+    "cta": "Начать",
+    "browse": "Смотреть",
+    "featuresTitle": "Что вы можете?",
+    "featuresSubtitle": "Все инструменты для роста как креатора",
+    "features": {
+      "analytics": "Аналитика",
+      "analyticsDesc": "Смотрите статистику Instagram и TikTok в одном месте",
+      "mediaKit": "Медиа-кит",
+      "mediaKitDesc": "Создавайте и делитесь профессиональными медиа-китами",
+      "directory": "Каталог",
+      "directoryDesc": "Пусть бренды вас найдут — появитесь в каталоге креаторов",
+      "telegram": "Telegram Бот",
+      "telegramDesc": "Получайте ежедневную статистику через Telegram"
+    },
+    "howTitle": "Как это работает?",
+    "steps": {
+      "step1": "Зарегистрируйтесь",
+      "step2": "Подключите Instagram/TikTok",
+      "step3": "Создайте и поделитесь медиа-китом"
+    },
+    "stats": {
+      "creators": "Креаторов",
+      "followers": "Отслеживаемых подписчиков",
+      "mediaKits": "Медиа-китов"
+    },
+    "ctaTitle": "Готовы начать?",
+    "ctaSubtitle": "Зарегистрируйтесь бесплатно и создайте свой профиль креатора",
+    "ctaButton": "Начать сейчас"
+  },
+  "auth": {
+    "loginSubtitle": "Войдите в свой аккаунт",
+    "email": "Email",
+    "emailPlaceholder": "email{'@'}example.com",
+    "password": "Пароль",
+    "passwordPlaceholder": "Введите пароль",
+    "signIn": "Войти",
+    "or": "или",
+    "googleSignIn": "Войти через Google",
+    "noAccount": "Нет аккаунта?",
+    "signUp": "Зарегистрироваться"
+  },
+  "dashboard": {
+    "title": "Панель управления",
+    "welcome": "Добро пожаловать, {name}",
+    "connectedAccounts": "Подключенные аккаунты",
+    "totalFollowers": "Всего подписчиков",
+    "mediaKit": "Медиа-кит",
+    "mediaKitNotCreated": "Ещё не создан",
+    "followers": "Подписчики",
+    "engagement": "Вовлечённость",
+    "growth": "Рост за неделю",
+    "growthChart": "Рост подписчиков",
+    "engagementChart": "Вовлечённость",
+    "topPosts": "Топ-посты",
+    "quickActions": "Быстрые действия",
+    "connectInstagram": "Подключить Instagram",
+    "createMediaKit": "Создать медиа-кит",
+    "syncAnalytics": "Синхронизировать аналитику",
+    "period7d": "7Д",
+    "period30d": "30Д",
+    "period90d": "90Д"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "Расскажите о себе",
+      "subtitle": "Заполните информацию профиля"
+    },
+    "step2": {
+      "title": "Выберите направления",
+      "subtitle": "Выберите категории, подходящие вашему контенту"
+    },
+    "step3": {
+      "title": "Подключите соцсети",
+      "subtitle": "Свяжите ваши аккаунты в соцсетях"
+    },
+    "step4": {
+      "title": "Почти готово!",
+      "subtitle": "Настройте языковые предпочтения и контактные данные"
+    },
+    "fullName": "Полное имя",
+    "fullNamePlaceholder": "Ваше полное имя",
+    "username": "Имя пользователя",
+    "bio": "О себе",
+    "bioPlaceholder": "Расскажите о себе...",
+    "city": "Город",
+    "cityPlaceholder": "Ваш город",
+    "country": "Страна",
+    "connectInstagram": "Подключить Instagram",
+    "connectTiktok": "Подключить TikTok (скоро)",
+    "skipSocials": "Вы можете пропустить этот шаг и подключить позже",
+    "contentLanguages": "Языки контента",
+    "contactEmail": "Контактный email",
+    "telegramUsername": "Telegram имя пользователя",
+    "back": "Назад",
+    "next": "Далее",
+    "complete": "Завершить настройку",
+    "niches": {
+      "beauty": "Красота",
+      "tech": "Технологии",
+      "food": "Еда",
+      "travel": "Путешествия",
+      "education": "Образование",
+      "fashion": "Мода",
+      "lifestyle": "Лайфстайл",
+      "entertainment": "Развлечения",
+      "sports": "Спорт",
+      "health": "Здоровье"
+    }
+  },
+  "settings": {
+    "title": "Настройки",
+    "profile": "Профиль",
+    "niches": "Направления",
+    "connectedAccounts": "Подключенные аккаунты",
+    "noAccounts": "Нет подключенных аккаунтов",
+    "disconnect": "Отключить",
+    "disconnected": "Аккаунт отключён",
+    "save": "Сохранить",
+    "saved": "Профиль сохранён",
+    "error": "Что-то пошло не так",
+    "dangerZone": "Опасная зона",
+    "deleteWarning": "После удаления аккаунта вернуть данные невозможно. Все ваши данные будут удалены безвозвратно.",
+    "deleteAccount": "Удалить аккаунт",
+    "confirmDelete": "Да, удалить мой аккаунт",
+    "cancel": "Отмена"
+  },
+  "creators": {
+    "title": "Каталог креаторов",
+    "subtitle": "Найдите талантливых креаторов и инфлюенсеров",
+    "search": "Поиск",
+    "searchPlaceholder": "Поиск по имени или username...",
+    "niche": "Направление",
+    "platform": "Платформа",
+    "language": "Язык",
+    "city": "Город",
+    "cityPlaceholder": "Фильтр по городу",
+    "followers": "подписчиков",
+    "noResults": "Креаторы по вашим фильтрам не найдены"
+  },
+  "mediakit": {
+    "title": "Медиа-кит",
+    "subtitle": "Создайте и настройте свой медиа-кит",
+    "chooseTemplate": "Выберите шаблон",
+    "templateMinimal": "Минималистичный",
+    "templateMinimalDesc": "Чистый и простой дизайн",
+    "templateProfessional": "Профессиональный",
+    "templateProfessionalDesc": "Деловой макет",
+    "templateCreative": "Креативный",
+    "templateCreativeDesc": "Яркий и красочный стиль",
+    "basicInfo": "Основная информация",
+    "tagline": "Слоган",
+    "taglinePlaceholder": "Ваш запоминающийся слоган...",
+    "bio": "О себе",
+    "bioPlaceholder": "Расскажите брендам о себе...",
+    "portfolio": "Портфолио",
+    "addUrl": "Добавить URL",
+    "pricing": "Прайс",
+    "pricingStory": "Instagram Story",
+    "pricingPost": "Instagram Пост",
+    "pricingReel": "Instagram Reel",
+    "pricingPackage": "Пакетное предложение",
+    "includeAnalytics": "Показать аналитику",
+    "includeAnalyticsDesc": "Показать количество подписчиков, ER и топ-посты",
+    "preview": "Предпросмотр",
+    "previewTagline": "Ваш слоган здесь",
+    "previewBio": "Ваше описание появится здесь...",
+    "previewFollowers": "Подписчики",
+    "previewER": "Вовлечённость",
+    "previewAvgLikes": "Ср. лайки",
+    "previewAvgComments": "Ср. комменты",
+    "previewTopPosts": "Топ-посты",
+    "save": "Сохранить",
+    "saved": "Медиа-кит сохранён",
+    "downloadPdf": "Скачать PDF",
+    "pdfGenerated": "PDF успешно создан",
+    "copyLink": "Копировать ссылку",
+    "linkCopied": "Ссылка скопирована",
+    "error": "Что-то пошло не так",
+    "notFound": "Медиа-кит не найден",
+    "notFoundDesc": "Этот медиа-кит не существует или был удалён"
+  },
+  "creatorProfile": {
+    "platforms": "Подключенные платформы",
+    "noPlatforms": "Платформы ещё не подключены",
+    "viewMediaKit": "Посмотреть медиа-кит"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "notConnected": "Ваш аккаунт Instagram не подключён",
+    "connectDescription": "Подключите Instagram для отслеживания аналитики",
+    "connect": "Подключить Instagram"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "comingSoon": "Скоро",
+    "comingSoonDescription": "Мы работаем над интеграцией TikTok. Скоро вы сможете просматривать аналитику TikTok здесь."
+  },
+  "telegram": {
+    "bot": "Telegram бот",
+    "botDescription": "Просматривайте статистику через Telegram бот",
+    "commands": {
+      "start": "Запустить бота",
+      "stats": "Посмотреть статистику",
+      "mediakit": "Получить ссылку на медиа-кит"
+    }
+  }
+}
