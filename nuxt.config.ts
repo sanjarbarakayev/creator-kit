@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@pinia/nuxt',
     'nuxt-security',
+    '@vueuse/motion/nuxt',
   ],
 
   css: ['~/assets/css/main.css'],

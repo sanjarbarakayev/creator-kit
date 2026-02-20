@@ -1,12 +1,9 @@
 <script setup lang="ts">
-definePageMeta({
-  middleware: 'auth',
-})
+definePageMeta({ middleware: 'auth' })
 
 const { t } = useI18n()
 const toast = useToast()
 
-// Template selection
 type Template = 'minimal' | 'professional' | 'creative'
 const selectedTemplate = ref<Template>('minimal')
 
@@ -16,25 +13,27 @@ const templates = computed(() => [
     label: t('mediakit.templateMinimal'),
     description: t('mediakit.templateMinimalDesc'),
     icon: 'i-lucide-minus',
-    colors: 'from-zinc-800 to-zinc-900',
+    preview: 'from-zinc-700/40 to-zinc-800/30',
+    accent: '#a1a1aa',
   },
   {
     id: 'professional' as Template,
     label: t('mediakit.templateProfessional'),
     description: t('mediakit.templateProfessionalDesc'),
     icon: 'i-lucide-briefcase',
-    colors: 'from-blue-900 to-indigo-900',
+    preview: 'from-blue-700/40 to-indigo-800/30',
+    accent: '#60a5fa',
   },
   {
     id: 'creative' as Template,
     label: t('mediakit.templateCreative'),
     description: t('mediakit.templateCreativeDesc'),
     icon: 'i-lucide-palette',
-    colors: 'from-purple-900 to-pink-900',
+    preview: 'from-violet-700/40 to-pink-800/30',
+    accent: '#a78bfa',
   },
 ])
 
-// Form state
 const form = reactive({
   tagline: '',
   bio: '',
@@ -49,23 +48,11 @@ const form = reactive({
   includeAnalytics: true,
 })
 
-function addPortfolioUrl() {
-  form.portfolioUrls.push('')
-}
+function addPortfolioUrl() { form.portfolioUrls.push('') }
+function removePortfolioUrl(index: number) { form.portfolioUrls.splice(index, 1) }
 
-function removePortfolioUrl(index: number) {
-  form.portfolioUrls.splice(index, 1)
-}
+const mockAnalytics = { followers: 12450, engagementRate: 4.2, avgLikes: 523, avgComments: 47 }
 
-// Mock analytics for preview
-const mockAnalytics = {
-  followers: 12450,
-  engagementRate: 4.2,
-  avgLikes: 523,
-  avgComments: 47,
-}
-
-// Actions
 const saving = ref(false)
 const generating = ref(false)
 
@@ -88,12 +75,8 @@ async function saveMediaKit() {
     })
     toast.add({ title: t('mediakit.saved'), color: 'success' })
   }
-  catch {
-    toast.add({ title: t('mediakit.error'), color: 'error' })
-  }
-  finally {
-    saving.value = false
-  }
+  catch { toast.add({ title: t('mediakit.error'), color: 'error' }) }
+  finally { saving.value = false }
 }
 
 async function downloadPdf() {
@@ -114,17 +97,11 @@ async function downloadPdf() {
         analytics: form.includeAnalytics ? mockAnalytics : null,
       },
     })
-    if (result.url) {
-      window.open(result.url, '_blank')
-    }
+    if (result.url) window.open(result.url, '_blank')
     toast.add({ title: t('mediakit.pdfGenerated'), color: 'success' })
   }
-  catch {
-    toast.add({ title: t('mediakit.error'), color: 'error' })
-  }
-  finally {
-    generating.value = false
-  }
+  catch { toast.add({ title: t('mediakit.error'), color: 'error' }) }
+  finally { generating.value = false }
 }
 
 function copyPublicLink() {
@@ -133,244 +110,269 @@ function copyPublicLink() {
   toast.add({ title: t('mediakit.linkCopied'), color: 'success' })
 }
 
-// Template-specific styles for preview
 const previewStyles = computed(() => {
   switch (selectedTemplate.value) {
     case 'professional':
-      return {
-        bg: 'bg-gradient-to-br from-blue-950 to-indigo-950',
-        accent: 'text-blue-400',
-        border: 'border-blue-800',
-        badge: 'bg-blue-500/20 text-blue-300',
-      }
+      return { bg: 'bg-gradient-to-br from-blue-950 to-indigo-950', accent: 'text-blue-400', border: 'border-blue-800/50', badge: 'bg-blue-500/15 text-blue-300 border-blue-500/20', accentHex: '#60a5fa' }
     case 'creative':
-      return {
-        bg: 'bg-gradient-to-br from-purple-950 to-pink-950',
-        accent: 'text-purple-400',
-        border: 'border-purple-800',
-        badge: 'bg-purple-500/20 text-purple-300',
-      }
+      return { bg: 'bg-gradient-to-br from-violet-950 to-fuchsia-950', accent: 'text-violet-400', border: 'border-violet-800/50', badge: 'bg-violet-500/15 text-violet-300 border-violet-500/20', accentHex: '#a78bfa' }
     default:
-      return {
-        bg: 'bg-zinc-900',
-        accent: 'text-white',
-        border: 'border-zinc-700',
-        badge: 'bg-zinc-700 text-zinc-300',
-      }
+      return { bg: 'bg-zinc-900', accent: 'text-white', border: 'border-zinc-700/50', badge: 'bg-zinc-700/50 text-zinc-300 border-zinc-600/30', accentHex: '#a1a1aa' }
   }
 })
 </script>
 
 <template>
   <div class="space-y-6">
-    <!-- Header -->
-    <div class="flex items-center justify-between">
+    <!-- ── Header ────────────────────────────────────────────── -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
       <div>
         <h1 class="text-2xl font-bold text-white">{{ t('mediakit.title') }}</h1>
-        <p class="mt-1 text-sm text-zinc-400">{{ t('mediakit.subtitle') }}</p>
+        <p class="mt-1 text-sm text-white/40">{{ t('mediakit.subtitle') }}</p>
       </div>
-      <div class="flex gap-2">
-        <UButton variant="outline" color="neutral" icon="i-lucide-link" @click="copyPublicLink">
+      <div class="flex flex-wrap gap-2">
+        <button
+          class="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-xs font-medium text-white/60 hover:text-white/90 transition-all"
+          @click="copyPublicLink"
+        >
+          <UIcon name="i-lucide-link" class="size-3.5" />
           {{ t('mediakit.copyLink') }}
-        </UButton>
-        <UButton variant="soft" color="neutral" icon="i-lucide-download" :loading="generating" @click="downloadPdf">
+        </button>
+        <button
+          class="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-xs font-medium text-white/60 hover:text-white/90 transition-all"
+          :disabled="generating"
+          @click="downloadPdf"
+        >
+          <UIcon :name="generating ? 'i-lucide-loader-circle' : 'i-lucide-download'" :class="['size-3.5', generating && 'animate-spin']" />
           {{ t('mediakit.downloadPdf') }}
-        </UButton>
-        <UButton color="primary" icon="i-lucide-save" :loading="saving" @click="saveMediaKit">
+        </button>
+        <button
+          class="btn-gradient inline-flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-semibold"
+          :disabled="saving"
+          @click="saveMediaKit"
+        >
+          <UIcon :name="saving ? 'i-lucide-loader-circle' : 'i-lucide-save'" :class="['size-3.5', saving && 'animate-spin']" />
           {{ t('mediakit.save') }}
-        </UButton>
+        </button>
       </div>
     </div>
 
-    <!-- Template Selector -->
+    <!-- ── Template Selector ─────────────────────────────────── -->
     <div>
-      <h2 class="mb-3 text-sm font-medium text-zinc-400">{{ t('mediakit.chooseTemplate') }}</h2>
+      <p class="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">{{ t('mediakit.chooseTemplate') }}</p>
       <div class="grid grid-cols-3 gap-4">
-        <div
+        <button
           v-for="tmpl in templates"
           :key="tmpl.id"
-          class="cursor-pointer rounded-xl border-2 p-4 transition-all"
+          class="relative rounded-2xl border-2 p-4 text-left transition-all duration-200 cursor-pointer"
           :class="selectedTemplate === tmpl.id
-            ? 'border-primary-500 ring-2 ring-primary-500/20'
-            : 'border-zinc-800 hover:border-zinc-600'"
+            ? 'border-violet-500 ring-2 ring-violet-500/20 bg-violet-500/5'
+            : 'border-white/[0.07] bg-white/[0.02] hover:border-white/15'"
           @click="selectedTemplate = tmpl.id"
         >
-          <div :class="['mb-3 h-20 rounded-lg bg-gradient-to-br', tmpl.colors, 'flex items-center justify-center']">
-            <UIcon :name="tmpl.icon" class="size-8 text-white/60" />
+          <!-- Selected indicator -->
+          <div v-if="selectedTemplate === tmpl.id" class="absolute top-3 right-3 h-5 w-5 rounded-full bg-violet-600 flex items-center justify-center">
+            <UIcon name="i-lucide-check" class="h-3 w-3 text-white" />
           </div>
-          <p class="font-medium text-white">{{ tmpl.label }}</p>
-          <p class="mt-1 text-xs text-zinc-500">{{ tmpl.description }}</p>
-        </div>
+          <div :class="`mb-3 h-16 rounded-xl bg-gradient-to-br ${tmpl.preview} flex items-center justify-center border border-white/[0.06]`">
+            <UIcon :name="tmpl.icon" class="size-6 text-white/50" />
+          </div>
+          <p class="text-sm font-semibold text-white">{{ tmpl.label }}</p>
+          <p class="mt-1 text-xs text-white/35">{{ tmpl.description }}</p>
+        </button>
       </div>
     </div>
 
-    <!-- Editor + Preview -->
+    <!-- ── Editor + Preview ─────────────────────────────────── -->
     <div class="grid gap-6 lg:grid-cols-5">
-      <!-- Editor Form (60%) -->
-      <div class="space-y-6 lg:col-span-3">
-        <!-- Tagline -->
-        <UCard class="border-zinc-800 bg-zinc-900">
-          <div class="space-y-4">
-            <h3 class="text-sm font-medium text-white">{{ t('mediakit.basicInfo') }}</h3>
-            <div>
-              <label class="mb-1.5 block text-xs text-zinc-400">{{ t('mediakit.tagline') }}</label>
-              <UInput v-model="form.tagline" :placeholder="t('mediakit.taglinePlaceholder')" />
+      <!-- Editor (3/5) -->
+      <div class="space-y-5 lg:col-span-3">
+
+        <!-- Basic Info -->
+        <div class="glass-card p-5 space-y-4">
+          <div class="flex items-center gap-2 mb-1">
+            <div class="h-5 w-5 rounded bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center">
+              <UIcon name="i-lucide-user" class="h-3 w-3 text-white" />
             </div>
-            <div>
-              <label class="mb-1.5 block text-xs text-zinc-400">{{ t('mediakit.bio') }}</label>
-              <UTextarea v-model="form.bio" :placeholder="t('mediakit.bioPlaceholder')" :rows="4" />
-            </div>
+            <h3 class="text-sm font-semibold text-white">{{ t('mediakit.basicInfo') }}</h3>
           </div>
-        </UCard>
+          <div>
+            <label class="block text-xs text-white/50 mb-1.5 font-medium">{{ t('mediakit.tagline') }}</label>
+            <input
+              v-model="form.tagline"
+              :placeholder="t('mediakit.taglinePlaceholder')"
+              class="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-violet-500/30 focus:border-violet-500/30 transition-all"
+            />
+          </div>
+          <div>
+            <label class="block text-xs text-white/50 mb-1.5 font-medium">{{ t('mediakit.bio') }}</label>
+            <textarea
+              v-model="form.bio"
+              :placeholder="t('mediakit.bioPlaceholder')"
+              rows="4"
+              class="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-violet-500/30 focus:border-violet-500/30 transition-all resize-none"
+            />
+          </div>
+        </div>
 
         <!-- Portfolio URLs -->
-        <UCard class="border-zinc-800 bg-zinc-900">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <h3 class="text-sm font-medium text-white">{{ t('mediakit.portfolio') }}</h3>
-              <UButton size="xs" variant="soft" icon="i-lucide-plus" @click="addPortfolioUrl">
-                {{ t('mediakit.addUrl') }}
-              </UButton>
+        <div class="glass-card p-5 space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="h-5 w-5 rounded bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+                <UIcon name="i-lucide-link" class="h-3 w-3 text-white" />
+              </div>
+              <h3 class="text-sm font-semibold text-white">{{ t('mediakit.portfolio') }}</h3>
             </div>
-            <div v-for="(_, index) in form.portfolioUrls" :key="index" class="flex gap-2">
-              <UInput v-model="form.portfolioUrls[index]" placeholder="https://" class="flex-1" />
-              <UButton
-                v-if="form.portfolioUrls.length > 1"
-                icon="i-lucide-trash-2"
-                variant="ghost"
-                color="error"
-                size="xs"
-                @click="removePortfolioUrl(index)"
+            <button
+              class="inline-flex items-center gap-1 rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 text-xs text-white/60 hover:text-white/90 transition-all"
+              @click="addPortfolioUrl"
+            >
+              <UIcon name="i-lucide-plus" class="h-3 w-3" />
+              {{ t('mediakit.addUrl') }}
+            </button>
+          </div>
+          <div v-for="(_, index) in form.portfolioUrls" :key="index" class="flex gap-2">
+            <input
+              v-model="form.portfolioUrls[index]"
+              placeholder="https://"
+              class="flex-1 rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-violet-500/30 transition-all"
+            />
+            <button
+              v-if="form.portfolioUrls.length > 1"
+              class="flex-shrink-0 rounded-xl border border-red-500/20 bg-red-500/10 px-3 text-red-400 hover:bg-red-500/20 transition-all"
+              @click="removePortfolioUrl(index)"
+            >
+              <UIcon name="i-lucide-trash-2" class="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="glass-card p-5 space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="h-5 w-5 rounded bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center">
+                <UIcon name="i-lucide-dollar-sign" class="h-3 w-3 text-white" />
+              </div>
+              <h3 class="text-sm font-semibold text-white">{{ t('mediakit.pricing') }}</h3>
+            </div>
+            <UToggle v-model="form.showPricing" />
+          </div>
+          <div v-if="form.showPricing" class="grid grid-cols-2 gap-4">
+            <div v-for="[key, placeholder] in [['story','$50'],['post','$100'],['reel','$200'],['package','$500']]" :key="key">
+              <label class="block text-xs text-white/50 mb-1.5 font-medium">{{ t(`mediakit.pricing${key.charAt(0).toUpperCase() + key.slice(1)}`) }}</label>
+              <input
+                v-model="(form.pricing as any)[key]"
+                :placeholder="placeholder"
+                class="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-violet-500/30 transition-all"
               />
             </div>
           </div>
-        </UCard>
-
-        <!-- Pricing -->
-        <UCard class="border-zinc-800 bg-zinc-900">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <h3 class="text-sm font-medium text-white">{{ t('mediakit.pricing') }}</h3>
-              <UToggle v-model="form.showPricing" />
-            </div>
-            <div v-if="form.showPricing" class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="mb-1.5 block text-xs text-zinc-400">{{ t('mediakit.pricingStory') }}</label>
-                <UInput v-model="form.pricing.story" placeholder="$50" />
-              </div>
-              <div>
-                <label class="mb-1.5 block text-xs text-zinc-400">{{ t('mediakit.pricingPost') }}</label>
-                <UInput v-model="form.pricing.post" placeholder="$100" />
-              </div>
-              <div>
-                <label class="mb-1.5 block text-xs text-zinc-400">{{ t('mediakit.pricingReel') }}</label>
-                <UInput v-model="form.pricing.reel" placeholder="$200" />
-              </div>
-              <div>
-                <label class="mb-1.5 block text-xs text-zinc-400">{{ t('mediakit.pricingPackage') }}</label>
-                <UInput v-model="form.pricing.package" placeholder="$500" />
-              </div>
-            </div>
-          </div>
-        </UCard>
+        </div>
 
         <!-- Analytics Toggle -->
-        <UCard class="border-zinc-800 bg-zinc-900">
+        <div class="glass-card p-5">
           <div class="flex items-center justify-between">
             <div>
-              <h3 class="text-sm font-medium text-white">{{ t('mediakit.includeAnalytics') }}</h3>
-              <p class="mt-1 text-xs text-zinc-500">{{ t('mediakit.includeAnalyticsDesc') }}</p>
+              <p class="text-sm font-semibold text-white">{{ t('mediakit.includeAnalytics') }}</p>
+              <p class="mt-1 text-xs text-white/35">{{ t('mediakit.includeAnalyticsDesc') }}</p>
             </div>
             <UToggle v-model="form.includeAnalytics" />
           </div>
-        </UCard>
+        </div>
       </div>
 
-      <!-- Live Preview (40%) -->
+      <!-- Live Preview (2/5) -->
       <div class="lg:col-span-2">
         <div class="sticky top-6">
-          <h3 class="mb-3 text-sm font-medium text-zinc-400">{{ t('mediakit.preview') }}</h3>
-          <div
-            :class="[previewStyles.bg, 'rounded-2xl border', previewStyles.border, 'overflow-hidden']"
-          >
-            <!-- Preview Header -->
-            <div class="p-6 text-center">
-              <div class="mx-auto mb-3 flex size-16 items-center justify-center rounded-full bg-white/10">
-                <UIcon name="i-lucide-user" class="size-8 text-white/60" />
+          <div class="flex items-center gap-2 mb-3">
+            <div class="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
+            <p class="text-xs font-medium text-white/40">{{ t('mediakit.preview') }}</p>
+          </div>
+
+          <div :class="[previewStyles.bg, 'rounded-2xl border overflow-hidden shadow-2xl', previewStyles.border]">
+            <!-- Header -->
+            <div class="p-6 text-center border-b" :class="previewStyles.border">
+              <!-- Avatar placeholder -->
+              <div class="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500/30 to-indigo-500/20 border border-white/10">
+                <UIcon name="i-lucide-user" class="size-6 text-white/40" />
               </div>
-              <h4 :class="['text-lg font-bold', previewStyles.accent]">
+              <h4 :class="['text-base font-bold', previewStyles.accent]">
                 {{ form.tagline || t('mediakit.previewTagline') }}
               </h4>
-              <p class="mt-2 text-sm text-zinc-400">
+              <p class="mt-2 text-xs text-white/40 leading-relaxed">
                 {{ form.bio || t('mediakit.previewBio') }}
               </p>
+              <!-- Template badge -->
+              <span :class="['mt-3 inline-block rounded-full border px-3 py-0.5 text-[10px] font-medium', previewStyles.badge]">
+                {{ selectedTemplate }} template
+              </span>
             </div>
 
-            <!-- Analytics Section -->
-            <div v-if="form.includeAnalytics" class="border-t px-6 py-4" :class="previewStyles.border">
-              <div class="grid grid-cols-2 gap-3">
-                <div class="rounded-lg bg-white/5 p-3 text-center">
-                  <p class="text-lg font-bold text-white">{{ mockAnalytics.followers.toLocaleString() }}</p>
-                  <p class="text-xs text-zinc-500">{{ t('mediakit.previewFollowers') }}</p>
-                </div>
-                <div class="rounded-lg bg-white/5 p-3 text-center">
-                  <p class="text-lg font-bold text-white">{{ mockAnalytics.engagementRate }}%</p>
-                  <p class="text-xs text-zinc-500">{{ t('mediakit.previewER') }}</p>
-                </div>
-                <div class="rounded-lg bg-white/5 p-3 text-center">
-                  <p class="text-lg font-bold text-white">{{ mockAnalytics.avgLikes }}</p>
-                  <p class="text-xs text-zinc-500">{{ t('mediakit.previewAvgLikes') }}</p>
-                </div>
-                <div class="rounded-lg bg-white/5 p-3 text-center">
-                  <p class="text-lg font-bold text-white">{{ mockAnalytics.avgComments }}</p>
-                  <p class="text-xs text-zinc-500">{{ t('mediakit.previewAvgComments') }}</p>
+            <!-- Analytics -->
+            <div v-if="form.includeAnalytics" class="px-5 py-4 border-b" :class="previewStyles.border">
+              <p class="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-3">Analytics</p>
+              <div class="grid grid-cols-2 gap-2.5">
+                <div v-for="[val, label] in [
+                  [mockAnalytics.followers.toLocaleString(), t('mediakit.previewFollowers')],
+                  [mockAnalytics.engagementRate + '%', t('mediakit.previewER')],
+                  [mockAnalytics.avgLikes.toString(), t('mediakit.previewAvgLikes')],
+                  [mockAnalytics.avgComments.toString(), t('mediakit.previewAvgComments')],
+                ]" :key="label" class="rounded-xl bg-white/[0.05] border border-white/[0.06] p-3 text-center">
+                  <p class="text-sm font-bold text-white">{{ val }}</p>
+                  <p class="text-[10px] text-white/35 mt-0.5">{{ label }}</p>
                 </div>
               </div>
             </div>
 
-            <!-- Top Posts Thumbnails -->
-            <div v-if="form.includeAnalytics" class="border-t px-6 py-4" :class="previewStyles.border">
-              <p class="mb-2 text-xs font-medium text-zinc-400">{{ t('mediakit.previewTopPosts') }}</p>
+            <!-- Top Posts thumbnails -->
+            <div v-if="form.includeAnalytics" class="px-5 py-4 border-b" :class="previewStyles.border">
+              <p class="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-3">{{ t('mediakit.previewTopPosts') }}</p>
               <div class="grid grid-cols-3 gap-2">
-                <div v-for="i in 3" :key="i" class="aspect-square rounded-lg bg-white/5 flex items-center justify-center">
-                  <UIcon name="i-lucide-image" class="size-5 text-zinc-600" />
+                <div
+                  v-for="i in 3"
+                  :key="i"
+                  class="aspect-square rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center"
+                >
+                  <UIcon name="i-lucide-image" class="size-4 text-white/20" />
                 </div>
               </div>
             </div>
 
-            <!-- Pricing Section -->
-            <div v-if="form.showPricing" class="border-t px-6 py-4" :class="previewStyles.border">
-              <p class="mb-3 text-xs font-medium text-zinc-400">{{ t('mediakit.pricing') }}</p>
+            <!-- Pricing -->
+            <div v-if="form.showPricing && (form.pricing.story || form.pricing.post || form.pricing.reel || form.pricing.package)" class="px-5 py-4 border-b" :class="previewStyles.border">
+              <p class="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-3">{{ t('mediakit.pricing') }}</p>
               <div class="space-y-2">
                 <div v-if="form.pricing.story" class="flex items-center justify-between">
-                  <span class="text-sm text-zinc-400">Instagram Story</span>
-                  <span :class="['text-sm font-medium', previewStyles.accent]">{{ form.pricing.story }}</span>
+                  <span class="text-xs text-white/40">Instagram Story</span>
+                  <span :class="['text-xs font-semibold', previewStyles.accent]">{{ form.pricing.story }}</span>
                 </div>
                 <div v-if="form.pricing.post" class="flex items-center justify-between">
-                  <span class="text-sm text-zinc-400">Instagram Post</span>
-                  <span :class="['text-sm font-medium', previewStyles.accent]">{{ form.pricing.post }}</span>
+                  <span class="text-xs text-white/40">Instagram Post</span>
+                  <span :class="['text-xs font-semibold', previewStyles.accent]">{{ form.pricing.post }}</span>
                 </div>
                 <div v-if="form.pricing.reel" class="flex items-center justify-between">
-                  <span class="text-sm text-zinc-400">Instagram Reel</span>
-                  <span :class="['text-sm font-medium', previewStyles.accent]">{{ form.pricing.reel }}</span>
+                  <span class="text-xs text-white/40">Instagram Reel</span>
+                  <span :class="['text-xs font-semibold', previewStyles.accent]">{{ form.pricing.reel }}</span>
                 </div>
                 <div v-if="form.pricing.package" class="flex items-center justify-between border-t pt-2" :class="previewStyles.border">
-                  <span class="text-sm font-medium text-zinc-300">{{ t('mediakit.pricingPackage') }}</span>
-                  <span :class="['text-sm font-bold', previewStyles.accent]">{{ form.pricing.package }}</span>
+                  <span class="text-xs font-medium text-white/60">{{ t('mediakit.pricingPackage') }}</span>
+                  <span :class="['text-xs font-bold', previewStyles.accent]">{{ form.pricing.package }}</span>
                 </div>
               </div>
             </div>
 
             <!-- Portfolio Links -->
-            <div v-if="form.portfolioUrls.some(u => u.trim())" class="border-t px-6 py-4" :class="previewStyles.border">
-              <p class="mb-2 text-xs font-medium text-zinc-400">{{ t('mediakit.portfolio') }}</p>
+            <div v-if="form.portfolioUrls.some(u => u.trim())" class="px-5 py-4" >
+              <p class="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-3">{{ t('mediakit.portfolio') }}</p>
               <div class="space-y-1.5">
                 <a
                   v-for="(url, i) in form.portfolioUrls.filter(u => u.trim())"
                   :key="i"
                   :href="url"
                   target="_blank"
-                  :class="['block truncate text-sm', previewStyles.accent, 'hover:underline']"
+                  :class="['block truncate text-xs hover:underline', previewStyles.accent]"
                 >
                   {{ url }}
                 </a>
