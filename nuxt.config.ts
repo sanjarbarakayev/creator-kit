@@ -37,6 +37,12 @@ export default defineNuxtConfig({
 
   supabase: {
     redirect: false,
+    // Provide fallback placeholder values so the Supabase client constructor
+    // does NOT throw "supabaseUrl is required" when env vars are missing,
+    // which would crash the SSR server with a 500 on every route.
+    // Real values MUST be set in Vercel env vars for auth to actually work.
+    url: process.env.SUPABASE_URL || 'https://placeholder.supabase.co',
+    key: process.env.SUPABASE_KEY || 'placeholder-anon-key',
   },
 
   i18n: {
