@@ -1,5 +1,6 @@
 import { socialAccounts } from '~~/server/database/schema'
 import { eq, and } from 'drizzle-orm'
+import { db } from '~~/server/utils/db'
 
 export default defineEventHandler(async (event) => {
   const user = (event.context as any).user

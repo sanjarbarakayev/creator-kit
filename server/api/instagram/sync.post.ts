@@ -1,5 +1,8 @@
 import { socialAccounts, analyticsSnapshots } from '~~/server/database/schema'
 import { eq, and } from 'drizzle-orm'
+import { db } from '~~/server/utils/db'
+import { decrypt } from '~~/server/utils/encryption'
+import { fetchInstagramInsights } from '~~/server/utils/instagram'
 
 export default defineEventHandler(async (event) => {
   const user = (event.context as any).user

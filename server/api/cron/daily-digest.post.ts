@@ -1,5 +1,7 @@
 import { profiles, socialAccounts } from '~~/server/database/schema'
 import { eq, and, isNotNull } from 'drizzle-orm'
+import { db } from '~~/server/utils/db'
+import { useTelegramBot, formatDigestMessage } from '~~/server/utils/telegram'
 
 export async function sendDailyDigest() {
   const bot = useTelegramBot()

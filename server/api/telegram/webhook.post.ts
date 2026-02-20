@@ -1,6 +1,8 @@
 import { webhookCallback } from 'grammy'
 import { profiles, socialAccounts, analyticsSnapshots, mediaKits } from '~~/server/database/schema'
 import { eq, desc, and } from 'drizzle-orm'
+import { db } from '~~/server/utils/db'
+import { useTelegramBot, formatAnalyticsMessage } from '~~/server/utils/telegram'
 
 let _initialized = false
 
